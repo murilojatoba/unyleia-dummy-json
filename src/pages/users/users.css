@@ -1,0 +1,39 @@
+.users-search {
+  display: flex;
+  flex-direction: column;
+}
+.users-search .container-form {
+  background: #fff;
+  margin-top: 16px;
+  padding: 24px 16px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.users-search .container-form .form {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.users-search .container-form .form input, select {
+  border: 0;
+  background: #04827220;
+  border-radius: 4px;
+  height: 36px;
+  padding: 0 8px;
+  flex: 1;
+}
+.users-search .container-form .botoes {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+.users-grid {
+  display: flex;
+  flex-direction: column;
+}
+.users-grid h1 {
+  margin-bottom: 16px;
+}

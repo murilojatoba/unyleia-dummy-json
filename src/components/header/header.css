@@ -1,0 +1,20 @@
+.header {
+  height: 80px;
+  display: flex;
+  padding: 16px 24px;
+}
+.header .menu {
+  display: flex;
+  list-style: none;
+  gap: 48px;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.header .item-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
