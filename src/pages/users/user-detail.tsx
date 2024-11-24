@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import Header from '../../components/header/header';
-import { ResponseUser, User } from '../../shared/models';
+import { User } from '../../shared/models';
 
 import './user-detail.css';
 
@@ -119,7 +119,7 @@ export default function UserDetail() {
                 </div>
               </div>
               <div className="botoes">
-                <button className="btn primary" onClick={e => navigate('/users')}>Voltar</button>
+                <button className="btn primary" onClick={() => navigate('/users')}>Voltar</button>
               </div>
             </div>
         }

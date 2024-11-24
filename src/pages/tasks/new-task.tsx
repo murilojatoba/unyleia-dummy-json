@@ -60,9 +60,9 @@ export default function NewTask() {
               <input type="number" placeholder="Id do Usuário*" value={task.userId} onChange={e => setTask({...task, userId: e.target.value})} />
           </div>
           <div className="botoes">
-            <button className="btn primary" onClick={e => { cadastrar() }}>Salvar</button>
-            <button className="btn secondary" onClick={e => resetForm()}>Limpar</button>
-            <button className="btn secondary" onClick={e => navigate('/tasks')}>Voltar</button>
+            <button className="btn primary" onClick={() => { cadastrar() }}>Salvar</button>
+            <button className="btn secondary" onClick={() => resetForm()}>Limpar</button>
+            <button className="btn secondary" onClick={() => navigate('/tasks')}>Voltar</button>
           </div>
         </div>
       </div>

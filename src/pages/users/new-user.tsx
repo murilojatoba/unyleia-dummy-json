@@ -68,9 +68,9 @@ export default function NewUser() {
             </p>
           </div>
           <div className="botoes">
-            <button className="btn primary" onClick={e => { cadastrar() }}>Salvar</button>
-            <button className="btn secondary" onClick={e => resetForm()}>Limpar</button>
-            <button className="btn secondary" onClick={e => navigate('/users')}>Voltar</button>
+            <button className="btn primary" onClick={() => { cadastrar() }}>Salvar</button>
+            <button className="btn secondary" onClick={() => resetForm()}>Limpar</button>
+            <button className="btn secondary" onClick={() => navigate('/users')}>Voltar</button>
           </div>
         </div>
       </div>

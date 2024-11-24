@@ -195,9 +195,9 @@ export default function Users() {
             </select>
           </div>
           <div className="botoes">
-            <button className="btn primary" onClick={e => { obterResponseUser() }}>Pesquisar</button>
-            <button className="btn secondary" onClick={e => navigate('/users/new')}>Novo</button>
-            <button className="btn secondary" onClick={e => resetForm()}>Limpar</button>
+            <button className="btn primary" onClick={() => { obterResponseUser() }}>Pesquisar</button>
+            <button className="btn secondary" onClick={() => navigate('/users/new')}>Novo</button>
+            <button className="btn secondary" onClick={() => resetForm()}>Limpar</button>
           </div>
         </div>
       </div>

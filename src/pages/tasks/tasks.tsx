@@ -2,7 +2,6 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
-import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/header/header";
@@ -128,9 +127,9 @@ export default function Tasks() {
             <input type="number" placeholder="Id do Usuário" value={userId} onChange={e => setUserId(e.target.value)} />
           </div>
           <div className="botoes">
-            <button className="btn primary" onClick={e => { obterResponseTask() }}>Pesquisar</button>
-            <button className="btn secondary" onClick={e => navigate('/tasks/new')}>Nova</button>
-            <button className="btn secondary" onClick={e => resetForm()}>Limpar</button>
+            <button className="btn primary" onClick={() => { obterResponseTask() }}>Pesquisar</button>
+            <button className="btn secondary" onClick={() => navigate('/tasks/new')}>Nova</button>
+            <button className="btn secondary" onClick={() => resetForm()}>Limpar</button>
           </div>
         </div>
       </div>
