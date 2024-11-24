@@ -1,6 +1,10 @@
 # unyleia-dummy-json
 [Frontend] Projeto de entrega da unidade 4, pós-graduação Unyleya
 
+Repo: https://github.com/murilojatoba/unyleya-dummy-json
+Site: https://unyleya-dummy-json.vercel.app/
+
+
 O projeto consiste na implementação de uma UI (User Interface) para a API Dummy Json, conforme especificado pela atividade sugerida pelo professor.
 
 ## Origem dos dados
