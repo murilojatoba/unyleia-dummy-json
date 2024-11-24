@@ -11,11 +11,6 @@ export default function Home() {
         <div className="bem-vindo">
           <p>Seja bem-vindo ao Dummy JSON UI, sua interface de acesso à API Dummy JSON!</p>
           <p>Utilize o menu superior para ter acesso aos recursos disponíbilizados.</p>
-          <p>Abaixo, apresentamos um dashboard com o desempenho dos usuários na realização de suas tarefas.</p>
-        </div>
-        <h1>Dashboard</h1>
-        <div className="users">
-          <h3>Teste</h3>
         </div>
       </div>
     </div>

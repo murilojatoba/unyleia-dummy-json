@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .users-search .container-form {
-  background: #fff;
+  background: var(--branco);
   margin-top: 16px;
   padding: 24px 16px;
   border-radius: 8px;
@@ -19,7 +19,7 @@
 }
 .users-search .container-form .form input, select {
   border: 0;
-  background: #04827220;
+  background: var(--verde-claro);
   border-radius: 4px;
   height: 36px;
   padding: 0 8px;

@@ -5,10 +5,11 @@ import {
 
 import Home from './pages/home/home'
 import Users from "./pages/users/users";
-import Tasks from "./pages/tasks/tasks";
-import Products from "./pages/products/products";
 import NewUser from "./pages/users/new-user";
+import UserDetail from "./pages/users/user-detail";
+import Tasks from "./pages/tasks/tasks";
 import NewTask from "./pages/tasks/new-task";
+import Products from "./pages/products/products";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export default function App() {
     {
       path: "/users/new",
       element: <NewUser />,
+    },
+    {
+      path: "/users/:id",
+      element: <UserDetail />,
     },
     {
       path: "/tasks",

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import DataTable from 'react-data-table-component';
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/header/header";
@@ -17,26 +18,83 @@ export default function Users() {
 
   const columns = [
     {
+      name: 'Ações',
+      cell: (row: User) => {
+        return (
+          <button
+            onClick={() => detalhar(row.id)}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            <FaMagnifyingGlass color='var(--verde-escuro)' size='24px' />
+          </button>
+        );
+      },
+      width: '5%',
+      center: true,
+    },
+    {
       name: 'Id',
       selector: (row: User) => row.id,
+      width: '5%',
+      center: true,
     },
     {
       name: 'Login',
       selector: (row: User) => row.username,
-    },
-    {
-      name: 'Nome',
-      selector: (row: User) => `${row.firstName}  ${row.lastName}`,
-    },
-    {
-      name: 'E-mail',
-      selector: (row: User) => row.email,
+      width: '10%',
     },
     {
       name: 'Perfil',
       selector: (row: User) => row.role,
+      width: '10%',
+    },
+    {
+      name: 'Nome',
+      selector: (row: User) => `${row.firstName}  ${row.lastName}`,
+      width: '35%',
+    },
+    {
+      name: 'E-mail',
+      selector: (row: User) => row.email,
+      width: '35%',
     },
   ];
+
+  const customStyles = {
+    table: {
+      style: {
+        borderRadius: '4px',
+        overflow: 'hidden',
+      },
+    },
+    headRow: {
+      style: {
+        background: 'var(--verde-escuro)',
+      },
+    },
+    headCells: {
+      style: {
+        fontWeight: 'bold',
+        color: 'var(--branco)',
+        fontSize: '1rem',
+      },
+    },
+    rows: {
+      style: {
+        '&:not(:last-of-type)': {
+          border: '1px solid #f2f3f7',
+        },
+        '&:hover': {
+          background: 'var(--verde-claro)',
+        },
+        fontSize: '1rem',
+      },
+    },
+  };
 
   const paginationComponentOptions = {
     noRowsPerPage: false,
@@ -114,6 +172,10 @@ export default function Users() {
     setRole('');
   }
 
+  function detalhar(id: number) {
+    navigate(`/users/${id}`);
+  }
+
   return (
     <div>
       <Header />
@@ -145,7 +207,13 @@ export default function Users() {
         {isLoading ? <p>Carregando...</p> :
 
           !responseUser || !responseUser.users || !responseUser.users.length ? <p>Não há usuários cadastrados</p> :
-            <DataTable columns={columns} data={responseUser.users} pagination paginationComponentOptions={paginationComponentOptions} />
+            <DataTable 
+              columns={columns} 
+              data={responseUser.users} 
+              paginationComponentOptions={paginationComponentOptions} 
+              customStyles={customStyles}
+              pagination 
+              striped />
         }
       </div>
     </div >

@@ -1,3 +1,10 @@
+:root {
+  --verde-escuro: #048272;
+  --verde-claro: #04827220;
+  --branco: #fff;
+  --cinza: #f2f3f7;
+  --preto: #1f1f1f;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +12,8 @@
 }
 html {
   font-family: "Roboto",sans-serif;
-  background: #f2f3f7;
-  color: #1f1f1f;
+  background: var(--cinza);
+  color: var(--preto);
 }
 .container {
   padding: 32px 16px;
@@ -21,6 +28,6 @@ html {
   cursor: pointer;
 }
 .primary {
-  background: #048272;
-  color: #fff;
+  background: var(--verde-escuro);
+  color: var(--branco);
 }

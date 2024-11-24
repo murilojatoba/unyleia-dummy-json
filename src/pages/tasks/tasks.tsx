@@ -2,6 +2,7 @@ import axios from "axios";
 
 import { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/header/header";
@@ -20,20 +21,59 @@ export default function Tasks() {
     {
       name: 'Id',
       selector: (row: Task) => row.id,
+      width: '5%',
+      center: true,
     },
     {
       name: 'Tarefa',
       selector: (row: Task) => row.todo,
+      width: '75%',
     },
     {
       name: 'Concluída?',
       selector: (row: Task) => row.completed ? 'Sim' : 'Não',
+      width: '10%',
+      center: true,
     },
     {
       name: 'Id do Usuário',
       selector: (row: Task) => row.userId,
+      width: '10%',
+      center: true,
     },
   ];
+
+  const customStyles = {
+    table: {
+      style: {
+        borderRadius: '4px',
+        overflow: 'hidden',
+      },
+    },
+    headRow: {
+      style: {
+        background: 'var(--verde-escuro)',
+      },
+    },
+    headCells: {
+      style: {
+        fontWeight: 'bold',
+        color: 'var(--branco)',
+        fontSize: '1rem',
+      },
+    },
+    rows: {
+      style: {
+        '&:not(:last-of-type)': {
+          border: '1px solid var(--cinza)',
+        },
+        '&:hover': {
+          background: 'var(--verde-claro)',
+        },
+        fontSize: '1rem',
+      },
+    },
+  };
 
   const paginationComponentOptions = {
     noRowsPerPage: false,
@@ -100,7 +140,13 @@ export default function Tasks() {
         {isLoading ? <p>Carregando...</p> :
 
           !responseTask || !responseTask.todos || !responseTask.todos.length ? <p>Não há usuários cadastrados</p> :
-            <DataTable columns={columns} data={responseTask.todos} pagination paginationComponentOptions={paginationComponentOptions} />
+            <DataTable 
+              columns={columns} 
+              data={responseTask.todos} 
+              paginationComponentOptions={paginationComponentOptions} 
+              customStyles={customStyles} 
+              pagination 
+              striped />
         }
       </div>
     </div>

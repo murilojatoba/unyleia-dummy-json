@@ -18,13 +18,13 @@ export default function Header() {
   return (
     <div className="header">
       <span className="item-menu" onClick={e => navegar('/')}>
-        <SiJson size='32px' color='#048272' />
+        <SiJson size='32px' color='var(--verde-escuro)' />
         <h1>Dummy Json UI</h1>
       </span>
       <ul className="menu">
-        <li><span className="item-menu" onClick={e => navegar('/users')}><FaUsersLine color='#048272' />Usuários</span></li>
-        <li><span className="item-menu"onClick={e => navegar('/tasks')}><FaTasks color='#048272' />Tarefas</span></li>
-        {/* <li><span className="item-menu" onClick={e => navegar('/products')}><LuPackage2 color='#048272' />Produtos</span></li> */}
+        <li><span className="item-menu" onClick={e => navegar('/users')}><FaUsersLine color='var(--verde-escuro)' />Usuários</span></li>
+        <li><span className="item-menu"onClick={e => navegar('/tasks')}><FaTasks color='var(--verde-escuro)' />Tarefas</span></li>
+        {/* <li><span className="item-menu" onClick={e => navegar('/products')}><LuPackage2 color='var(--verde-escuro)' />Produtos</span></li> */}
       </ul>
     </div>
   )
